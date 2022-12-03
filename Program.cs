@@ -6,43 +6,43 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-void CreatAndShowArray(int rows, int columns)  
-{      
-    // Инициализация массива
-    double [,] newArray = new double[rows, columns];
+// void CreatAndShowArray(int rows, int columns)  
+// {      
+//     // Инициализация массива
+//     double [,] newArray = new double[rows, columns];
 
-    Random value = new Random(); // случайное число для суммирования в float
+//     Random value = new Random(); // случайное число для суммирования в float
     
-    if( rows > 0 && columns > 0)
-    {
-        // создание массива
-        for (int i = 0; i < rows; i++)
-        {
-            for(int j = 0; j < columns; j++)
-            {
-            newArray[i,j] =Math.Round(value.Next(-100, 100) + value.NextDouble(), 2);
-            }
-        }
+//     if( rows > 0 && columns > 0)
+//     {
+//         // создание массива
+//         for (int i = 0; i < rows; i++)
+//         {
+//             for(int j = 0; j < columns; j++)
+//             {
+//             newArray[i,j] =Math.Round(value.Next(-100, 100) + value.NextDouble(), 2);
+//             }
+//         }
 
-        // Отображение массива
-        for(int i = 0; i < rows ;i++ ) 
-            {
-                for(int j = 0; j < columns; j++)  
-                {
-                Console.Write(newArray[i,j] + " ");
-                }
-                Console.WriteLine(); 
-            }
-    }
-    else Console.WriteLine("Ошибка ввода данных");
-}
+//         // Отображение массива
+//         for(int i = 0; i < rows ;i++ ) 
+//             {
+//                 for(int j = 0; j < columns; j++)  
+//                 {
+//                 Console.Write(newArray[i,j] + " ");
+//                 }
+//                 Console.WriteLine(); 
+//             }
+//     }
+//     else Console.WriteLine("Ошибка ввода данных");
+// }
 
-Console.Write("Введите кол-во строк ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите кол-во столбцов ");
-int columns = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите кол-во строк ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите кол-во столбцов ");
+// int columns = Convert.ToInt32(Console.ReadLine());
 
-CreatAndShowArray(rows, columns);
+// CreatAndShowArray(rows, columns);
 
 // Задача 50. Напишите программу,
 // которая на вход принимает позиции элемента в двумерном массиве,
@@ -144,58 +144,63 @@ CreatAndShowArray(rows, columns);
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-// int [,] CreatAndShowArray(int rows, int columns)  
-// {      
-//     // Инициализация массива
-//     int[,] newArray = new int[rows, columns];  
+int [,] CreatAndShowArray(int rows, int columns)  
+{      
+    // Инициализация массива
+    int[,] newArray = new int[rows, columns];  
     
-//     if( rows > 0 && columns > 0)
-//     {
-//         // создание массива
-//         for (int i = 0; i < rows; i++)
-//         {
-//             for(int j = 0; j < columns; j++)
-//             {
-//             newArray[i,j] = new Random().Next(1, 11);
-//             }
-//         }
+    if( rows > 0 && columns > 0)
+    {
+        // создание массива
+        for (int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < columns; j++)
+            {
+            newArray[i,j] = new Random().Next(1, 11);
+            }
+        }
 
-//         // Отображение массива
-//         for(int i = 0; i < rows ;i++ ) 
-//             {
-//                 for(int j = 0; j < columns; j++)  
-//                 {
-//                 Console.Write(newArray[i,j] + " ");
-//                 }
-//                 Console.WriteLine(); 
-//             }
-//         return newArray;
-//     }
-//     else 
-//     {
-//         Console.WriteLine("Ошибка ввода данных");
-//         return newArray;
-//     }
-// }
+        // Отображение массива
+        for(int i = 0; i < rows ;i++ ) 
+            {
+                for(int j = 0; j < columns; j++)  
+                {
+                Console.Write(newArray[i,j] + " ");
+                }
+                Console.WriteLine(); 
+            }
+        return newArray;
+    }
+    else 
+    {
+        Console.WriteLine("Ошибка ввода данных");
+        return newArray;
+    }
+}
 
-// Console.Write("Введите кол-во строк ");
-// int rows = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите кол-во столбцов ");
-// int columns = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите кол-во строк ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите кол-во столбцов ");
+int columns = Convert.ToInt32(Console.ReadLine());
 
-// int [,] myArray = CreatAndShowArray(rows, columns);
+int [,] myArray = CreatAndShowArray(rows, columns);
 
 
 
-// void arithmeticMean(int [,] myArray)
-// {
-//     int sum;
+void arithmeticMean(int [,] myArray)
+{
+    for (int j = 0; j < myArray.GetLength(1); j++) // столбцы
+    {
+        double sum = 0;
+        for (int i = 0;  i < myArray.GetLength(0); i++) // строки
+        {
+            sum = (sum + myArray[i, j]);
+        }
+        Console.WriteLine
+        (
+            $"Среднее арифметическое столбца {j + 1} равно {Math.Round(sum / myArray.GetLength(0), 2)}"
+        );
+    }
+}
 
-//     for (int j = 0; j < myArray.GetLength(1); j++)
-//     {
-//         for (int i = 0;  i < myArray.GetLength(0); i++)
-//         {
-            
-//         }
-//     }
-// }
+arithmeticMean(myArray);
