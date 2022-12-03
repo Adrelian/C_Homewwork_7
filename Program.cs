@@ -6,41 +6,43 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-// void CreatAndShowArray(int rows, int columns)  
-// {      
-//     // Инициализация массива
-//     int[,] newArray = new int[rows, columns];  
+void CreatAndShowArray(int rows, int columns)  
+{      
+    // Инициализация массива
+    double [,] newArray = new double[rows, columns];
+
+    Random value = new Random(); // случайное число для суммирования в float
     
-//     if( rows > 0 && columns > 0)
-//     {
-//         // создание массива
-//         for (int i = 0; i < rows; i++)
-//         {
-//             for(int j = 0; j < columns; j++)
-//             {
-//             newArray[i,j] = new Random().Next(1, 11);
-//             }
-//         }
+    if( rows > 0 && columns > 0)
+    {
+        // создание массива
+        for (int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < columns; j++)
+            {
+            newArray[i,j] =Math.Round(value.Next(-100, 100) + value.NextDouble(), 2);
+            }
+        }
 
-//         // Отображение массива
-//         for(int i = 0; i < rows ;i++ ) 
-//             {
-//                 for(int j = 0; j < columns; j++)  
-//                 {
-//                 Console.Write(newArray[i,j] + " ");
-//                 }
-//                 Console.WriteLine(); 
-//             }
-//     }
-//     else Console.WriteLine("Ошибка ввода данных");
-// }
+        // Отображение массива
+        for(int i = 0; i < rows ;i++ ) 
+            {
+                for(int j = 0; j < columns; j++)  
+                {
+                Console.Write(newArray[i,j] + " ");
+                }
+                Console.WriteLine(); 
+            }
+    }
+    else Console.WriteLine("Ошибка ввода данных");
+}
 
-// Console.Write("Введите кол-во строк ");
-// int rows = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите кол-во столбцов ");
-// int columns = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите кол-во строк ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите кол-во столбцов ");
+int columns = Convert.ToInt32(Console.ReadLine());
 
-// CreatAndShowArray(rows, columns);
+CreatAndShowArray(rows, columns);
 
 // Задача 50. Напишите программу,
 // которая на вход принимает позиции элемента в двумерном массиве,
