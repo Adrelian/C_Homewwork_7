@@ -55,74 +55,81 @@
 
 // 17 -> такого числа в массиве нет
 
-int [,] CreatAndShowArray(int rows, int columns)  
-{      
-    // Инициализация массива
-    int[,] newArray = new int[rows, columns];  
+// int [,] CreatAndShowArray(int rows, int columns)  
+// {      
+//     // Инициализация массива
+//     int[,] newArray = new int[rows, columns];  
     
-    if( rows > 0 && columns > 0)
-    {
-        // создание массива
-        for (int i = 0; i < rows; i++)
-        {
-            for(int j = 0; j < columns; j++)
-            {
-            newArray[i,j] = new Random().Next(1, 11);
-            }
-        }
+//     if( rows > 0 && columns > 0)
+//     {
+//         // создание массива
+//         for (int i = 0; i < rows; i++)
+//         {
+//             for(int j = 0; j < columns; j++)
+//             {
+//             newArray[i,j] = new Random().Next(1, 11);
+//             }
+//         }
 
-        // Отображение массива
-        for(int i = 0; i < rows ;i++ ) 
-            {
-                for(int j = 0; j < columns; j++)  
-                {
-                Console.Write(newArray[i,j] + " ");
-                }
-                Console.WriteLine(); 
-            }
-        return newArray;
-    }
-    else 
-    {
-        Console.WriteLine("Ошибка ввода данных");
-        return newArray;
-    }
+//         // Отображение массива
+//         for(int i = 0; i < rows ;i++ ) 
+//             {
+//                 for(int j = 0; j < columns; j++)  
+//                 {
+//                 Console.Write(newArray[i,j] + " ");
+//                 }
+//                 Console.WriteLine(); 
+//             }
+//         return newArray;
+//     }
+//     else 
+//     {
+//         Console.WriteLine("Ошибка ввода данных");
+//         return newArray;
+//     }
 
-}
+// }
 
-Console.Write("Введите кол-во строк ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите кол-во столбцов ");
-int columns = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите кол-во строк ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите кол-во столбцов ");
+// int columns = Convert.ToInt32(Console.ReadLine());
 
-int [,] myArray = CreatAndShowArray(rows, columns);
+// int [,] myArray = CreatAndShowArray(rows, columns);
 
 
-void findNumberInArray (int indexI, int indexJ, int [,] myArray)
-{
-    if (indexI <= myArray.GetLength(0) && indexJ <= myArray.GetLength(1))
-    for (int i = 0; i < myArray.GetLength(0); i++) // перебираем строки
-    {
-        if (indexI - 1 == i) // если строка равна пользовательской, начинаем перебор столбцов
-        {
-            for(int j = 0; j < myArray.GetLength(1); j++) // перебираем столбцы
-            {
-                if (indexJ - 1 == j) // если стобец равен пользовательскому, делаем вывод
-                {
-                    Console.WriteLine($"Ваше число {myArray[i,j]}");
-                }
-            }
-        }
-    }
-    else Console.WriteLine("Ошибка");
-}
+// int findNumberInArray (int indexI, int indexJ)
+// {
+//     int number; // искомое число
 
-Console.Write("Введите строку для поиска ");
-int indexI = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите введите столбец для поиска ");
-int indexJ = Convert.ToInt32(Console.ReadLine());
+//     if (indexI <= myArray.GetLength(0) && indexJ <= myArray.GetLength(1)) // отмекаем ошибку ввода
+//     {    
+//         for (int i = 0; i < myArray.GetLength(0); i++) // перебираем строки
+//         {
+//             if (indexI - 1 == i) // если строка равна пользовательской, начинаем перебор столбцов
+//             {             
+//                 for(int j = 0; j < myArray.GetLength(1); j++) // перебираем столбцы
+//                 {
+//                     if (indexJ - 1 == j) // если стобец равен пользовательскому, делаем вывод
+//                     {
+//                         number = myArray[i,j]; 
+//                         Console.WriteLine($"Ваше число {number}");
+//                         return number;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     else Console.WriteLine("Ошибка"); // Если ошибка ввода
+//     return indexI;
+// }
 
-findNumberInArray(indexI, indexJ, myArray);
+// Console.Write("Введите строку для поиска ");
+// int indexI = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите введите столбец для поиска ");
+// int indexJ = Convert.ToInt32(Console.ReadLine());
+
+// findNumberInArray(indexI, indexJ);
 
 
 
